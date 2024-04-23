@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <h2>Select Attributes</h2>
+        <form method="post" action="{% url 'visualize_data' %}">
+            {% csrf_token %}
+            <label for="options">Attributes:</label>
+            <br>
+            <select id="options" name='a_attributes'>
+                <option value="total_products">Total Products</option>
+                <option value="defect_products">Defected Products</option>
+                <option value="passed_products">Passed Products</option>
+                <option value="products_returned">Returned Products</option>
+                <option value="customer_compliants">Customer Complaints</option>
+            </select>
+            <br>
+            <select id="options" name='b_attributes'>
+                <option value="none">None</option>
+                <option value="total_products">Total Products</option>
+                <option value="defect_products">Defected Products</option>
+                <option value="passed_products">Passed Products</option>
+                <option value="products_returned">Returned Products</option>
+                <option value="customer_compliants">Customer Complaints</option>
+            </select>
+            <br>
+            <br>
+            <h2>Enter Date Range</h2>
+            <label for="start_date">Start Date:(mm-yyyy)</label>
+            <input type="'date" id="start_date" name="start_date" required>
+            <br>
+            <label for="end_date">End Date:(mm-yyyy)</label>
+            <input type="'date" id="end_date" name="end_date" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <p>We hustle everyday, life ain't no movie. Success is small steps everyday</p>
+    </body>
+</html>
+    

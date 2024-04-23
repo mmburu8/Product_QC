@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=DM+Sans);
+
+    body{
+        background-image: url("{% static 'management bck 3.png' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+    }
+
+    
+.original{
+    font-size: 60px;
+    padding-top: 5px;
+    padding-left: 70px;
+    color: #FFFFFF;
+    font-family: "DM Sans";
+}
+.freaky{
+    color: #FF9149
+}
+
+h2{
+    padding-top: 110px;
+    padding-left: 70px;
+  font-size: 30px;
+  color: #FFFFFF;
+  font-family: 'DM Sans';
+}
+   
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 70px;
+}
+
+.buttons {
+    text-align: right;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+    
+
+    </style>
+</head>
+<body>
+    <h1 class="original">Welcome to your <br><span class="freaky">Performance Hub</span></h1>
+    <h2>Optimize your product<br>quality for maximum<br>customer satisfaction<br>and value.</h2>
+    <div class="container">
+        <h3>NARNIA KICKS STORE</h3>
+        <div class="buttons">
+            <a href="{% url 'data_entry' %}" class="button">Data Entry</a>
+            <a href="{% url 'visualize_data' %}" class="button">Visualize Data</a>
+        </div>
+    </div>
+</body>
+</html>

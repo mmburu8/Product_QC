@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut-icon" href="/assets/favicon.ico">
+        <link rel="stylesheet" href="/assets/decode.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk|Yanone Kaffeesatz|Arvo|Protest Riot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ select_attributes }}</title>
+        <style>
+            
+            img{
+                margin-top: 0px;
+                margin-left: 40px;
+            }
+            h2{
+                margin: 0 0px 0 240px;
+                font-family:  "Protest Riot";
+                font-size: 40px;
+            }
+            .custom-table{
+                border-collapse: collapse;
+                margin: 25px 0 0 200px;
+                font-size: 0.9em;
+                min-width: 400px;
+                border-radius: 5px 0 0;
+                width: 50%;
+            }
+
+            .custom-table table, td, th{
+                border: 1px solid
+            }
+            .custom-table thead tr{
+                background-color: {{ col_show }};
+                color: #ffffff;
+                text-align: left;
+            }
+            .custom-table th{
+                text-align: left;
+                height: 10px;
+                font-size: 20px;
+                padding: 10px 13px;
+                font-family: "Space Grotesk";
+            }
+            .custom-table tbody tr:nth-of-type(even){
+                background-color: #f3f3f3
+            }
+            .custom-table tbody tr:last-of-type{
+                border-bottom: 3px solid {{ col_show }}
+
+            }
+            .custom-table td{
+                height: 23px;
+                padding: 10px 13px;
+                font-size: 19px;
+                font-family: 'Yanone Kaffeesatz'
+            }
+        </style>
+    </head>
+    <body> 
+        
+        <img src="data:image/png;base64, {{ image_base64 }}" alt="Seaborn Un">
+        {{ html_table | safe }}
+    </body>
+</html>

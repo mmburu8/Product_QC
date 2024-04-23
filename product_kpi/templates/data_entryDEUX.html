@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+* {
+  font-family: 'Roboto Slab';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image:  url("{% static 'splash 123.jpg' %}");
+  background-repeat: no-repeat;
+}
+
+.iconSection {
+  position: absolute;
+  top: 50%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(53, 49, 49, 0.5);
+}
+
+ion-icon{
+  font-size: 120px;
+  color: lightblue;
+  padding: 20px 0;
+}
+.info {
+  width: 45%;
+  background: rgba(20, 20, 20, .8);
+  padding: 30px 0;
+  border-right: 5px solid rgba(30, 30, 30, .8);
+  h2 {
+    padding-top: 90px;
+    font-weight: 350;
+  }
+  p {
+    font-size: 20px;
+  }
+  .icon {
+    font-size: 8em;
+    padding: 20px 0;
+    color: rgba(10, 180, 180, 1);
+  }
+}
+
+.signupForm {
+  width: 70%;
+  padding: 30px 0;
+  background: rgba(20, 40, 40, .8);
+  transition: .2s;
+  h2 {
+    font-weight: 300;
+  }
+}
+
+.inputFields {
+  margin: 15px 0;
+  font-size: 18px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid rgba(10, 180, 180, 1);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, .2);
+  color: #fff0f5;
+  outline: none;
+  &::placeholder {
+      font-size: 16px;
+      color: #f5f5f5;
+    }
+}
+
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+  input.inputFields {
+    font-size: 16px;
+    color: #2F4F4F;
+
+    &::placeholder {
+      font-size: 14px;
+      color: #F0FFF0;
+    }
+  }
+}
+}
+
+#join-btn {
+  border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  &:hover {
+    background: rgba(20, 20, 20, .8);
+    padding: 10px 80px;
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class="iconSection">
+    <div class="info">
+        <h2>Narnia Kicks Store</h2>
+        <ion-icon name="aperture-outline" aria-hidden=true></ion-icon>
+        <p>Drip is Forever</p>
+    </div>
+    <form method="post" action="{% url 'data_entry' %}">
+        {% csrf_token %}
+        <h2>Add Product Data</h2>
+        <ul class="noBullets">
+            <li>
+                <label for="date"></label>
+                <input type="date" class="inputFields" id="date" name="date" placeholder="Date" value="" required/>
+            </li>
+            <li>
+                <label for="total_products"></label>
+                <input type="number" class="inputFields" id="total_products" name="total_products" placeholder="Total Products" value="" required/>
+            </li>
+            <li>
+                <label for="passed_products"></label>
+                <input type="number" class="inputFields" id="passed_products" name="passed_products" placeholder="Passed Products" value="" required/>
+            </li>
+            <li>
+                <label for="defect_products"></label>
+                <input type="number" class="inputFields" id="defect_products" name="defect_products" placeholder="Defected Products" value="" required/>
+            </li>
+            <li>
+                <label for="products_returned"></label>
+                <input type="number" class="inputFields" id="products_returned" name="products_returned" placeholder="Returned Products" value="" required/>
+            </li>
+            <li>
+                <label for="customer_compliants"></label>
+                <input type="number" class="inputFields" id="customer_compliants" name="customer_compliants" placeholder="Customer Complaints" value="" required/>
+            </li>
+            <li id="center-btn">
+                <input type="submit" id="join-btn" name="submit" alt="Submit" value="Submit">
+
+            </li>
+        </ul>
+    </form>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

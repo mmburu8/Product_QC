@@ -1,0 +1,15 @@
+<!-- myapp/templates/add_data.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product Data</title>
+</head>
+<body>
+    <h2>MONTHLY PRODUCT QC ENTRY</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

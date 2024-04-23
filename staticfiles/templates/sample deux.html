@@ -1,0 +1,360 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image:  url("{% static 'sneaker 6.jpg' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.middle{
+  width: 460px;
+  margin: 0 auto;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+h2{
+  margin: 20px 0 0 0;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  font-weight: normal;
+  text-align: center;
+}
+
+h4{
+  margin: 0px 0 0 0;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 36px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#fancy-inputs{
+  float: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+  label.input{
+    float: left;
+    width: 460px;
+    height: 42px;
+    margin: 50px 0 0 0;
+    position: relative;
+    clear: both;
+    span{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      left: 0;
+      cursor: text;
+      span{
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        font-family: 'Indie Flower', cursive;
+        font-size: 22px;
+        color: #fff;
+        text-indent: 10px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:before{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: #2C3E50;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:after{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: #2C3E50;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+    }
+  }
+
+  input{
+    float: left;
+    width: 460px;
+    height: 40px;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 3px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+    position: relative;
+    z-index: 99;
+    &:focus{
+      outline: 0;
+    }
+    &.white{
+      background-color: #E74C3C;
+    }
+  }
+
+  input:focus + span{
+    span{
+      cursor: initial;
+      position: absolute;
+      top: -35px;
+      color: #2C3E50;
+    }
+    &:before{
+      width: 50%;
+    }
+    &:after{
+      width: 50%;
+    }
+  }
+
+  span.fixed{
+    span{
+      top: -35px;
+    }
+  }
+}
+
+
+#fancy-radio-first{
+  float: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+  label.radio{
+    float: left;
+    width: auto;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    clear: both;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    &:before{
+      content: '';
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin: 0 50px 0 0;
+      background-color: #fff;
+      border-radius: 100%;
+      font-size: 20px;
+      text-indent: 40px;
+    }
+    &:after{
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #2C3E50;
+      border-radius: 100%;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      opacity: 0;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+    }
+    &.selected{
+      &:after{
+        width: 20px;
+        height: 20px;			
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+        background-color: #33cc33;
+      }
+    }
+    &:hover{
+      text-indent: 5px;
+    }
+  }
+}
+
+#fancy-radio-second {
+  float: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+  label.checkbox{
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    clear: both;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    &:before {
+      content: '';
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin: 0 50px 0 0;
+      background-color: #fff;
+      border-radius: 100%; /* Adjust border radius for checkbox appearance */
+      font-size: 20px;
+      text-indent: 40px;
+    }
+    
+    
+    &:after{
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #2C3E50;
+      border-radius: 100%;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      opacity: 0;
+      transition: 0.2s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+}&.selected{
+      &:after {
+        width: 20px;
+        height: 20px;      
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+        background-color: #33cc33; /* Change color when checkbox is selected */
+}
+}
+&:hover {
+  text-indent: 5px;
+}
+}
+input[type="checkbox"]:checked + label.checkbox{
+      color: #2F4F4F
+
+    }
+}
+
+.btn{
+  float: left;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 0 50px 0;
+  background-color: #2C3E50;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  &:hover{
+    background-color: #374b60;
+  }
+}   
+    </style>
+</head>
+<body>
+    <div class="middle">
+        <h2>Select Attributes</h2>
+        <br>
+        <form method="post" action="{% url 'visualize_data' %}">
+            {% csrf_token %}
+        <div id="fancy-radio-second">
+            <input type="checkbox" name="aattributes" id="total_products" value="total_products" class="pull-left" style="display:none;">
+            <label class="checkbox" for="total_products">Total Products</label>
+            <input type="checkbox" name="aattributes" id="defect_products"  value="defect_products" class="pull-left" style="display:none;">
+            <label class="checkbox" for="defect_products">Defected Products</label>
+            <input type="checkbox" name="aattributes" id="passed_products" value="passed_products"class="pull-left" style="display:none;">
+            <label class="checkbox" for="passed_products">Passed Products</label>
+            <input type="checkbox" name="aattributes" id="products_returned" value="products_returned" class="pull-left" style="display:none;">
+            <label class="checkbox" for="products_returned">Products Returned</label>
+            <input type="checkbox" name="aattributes" id="customer_compliants" value="customer_compliants" class="pull-left" style="display:none;">
+            <label class="checkbox" for="customer_compliants">Customer Complaints</label>
+        </div>
+        <div id="fancy-inputs">
+            <label class="input">
+              <input type="text" name="start_date">
+              <span><span>Start Date(dd-mm-yyyy):</span></span>
+            </label>
+
+            <label class="input">
+              <input type="text" name="end_date">
+              <span><span>End Date(dd-mm-yyyy):</span></span>
+            </label>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $('#fancy-inputs input[type="text"]').blur(function(){
+  if($(this).val().length > 0){
+    $(this).addClass('white');
+  } else {
+    $(this).removeClass('white');
+  }
+});
+
+$("#fancy-radio-first input[type=radio]").click(function() {
+  // Remove 'selected' class from all labels
+  $('label.radio').removeClass('selected');
+
+  // Get the ID of the clicked radio button
+  var inputID = $(this).attr('id');
+
+  // Add 'selected' class to the corresponding label
+  if ($(this).is(':checked')) {
+    $('label[for="' + inputID + '"]').addClass('selected');
+  }
+});
+
+$("#fancy-radio-second input[type=checkbox]").click(function() {
+  var selectedAttributes = [];
+  $("#fancy-radio-second input[type=checkbox]:checked").each(function(){
+    selectedAttributes.push($(this).attr("id"))
+  })
+  console.log('Selected attributes:', selectedAttributes);
+})
+  })
+    </script>
+</body>
+</html>
