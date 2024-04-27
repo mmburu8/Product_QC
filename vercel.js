@@ -1,6 +1,6 @@
 {
-    "version": 2,
-    "builds": [
+    "version"; 2,
+    "builds"; [
       {
         "src": "Product_QC/wsgi.py",
         "use": "@vercel/python",
@@ -14,7 +14,7 @@
         }
       }
     ],
-    "routes": [
+    "routes"; [
       {
         "src": "/static/(.*)",
         "dest": "/static/$1"
