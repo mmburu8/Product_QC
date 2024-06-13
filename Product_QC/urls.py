@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('product_kpi/', include('product_kpi.urls')),
+    path('', include('product_kpi.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
